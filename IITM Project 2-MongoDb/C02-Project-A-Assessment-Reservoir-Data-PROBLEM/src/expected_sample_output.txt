@@ -1,0 +1,20 @@
+C:\Users\User\AppData\Local\Programs\Python\Python39\python.exe "C:\Users\User\IITM Projects_KIRTI\IITM Project 2-MongoDb\C02-Project-A-Assessment-Reservoir-Data-PROBLEM\src\main.py" 
+{'_id': ObjectId('653aa3e024ff99e890faebb7'), 'device_id': 'DS004', 'desc': 'Salinity Sensor', 'type': 'Salinity', 'manufacturer': 'Acme'}
+
+Device id DC201 already exists!
+
+{'_id': ObjectId('653aa3e024ff99e890faebe3'), 'device_id': 'DS001', 'value': 1056, 'timestamp': datetime.datetime(2021, 12, 2, 13, 30)}
+
+Generate daily reports
+Get daily report for one day
+{'device_id': 'DS004', 'avg_value': 964.5, 'min_value': 784, 'max_value': 1073, 'date': '2021-12-02'}
+
+Get daily report for multiple days
+[{'device_id': 'DC004', 'avg_value': 71.96, 'min_value': 52, 'max_value': 96, 'date': '2021-12-02'}, {'device_id': 'DC004', 'avg_value': 78.08, 'min_value': 60, 'max_value': 106, 'date': '2021-12-03'}, {'device_id': 'DC004', 'avg_value': 68.33, 'min_value': 51, 'max_value': 93, 'date': '2021-12-04'}, {'device_id': 'DC004', 'avg_value': 78.08, 'min_value': 60, 'max_value': 106, 'date': '2021-12-03'}, {'device_id': 'DC004', 'avg_value': 71.96, 'min_value': 52, 'max_value': 96, 'date': '2021-12-02'}, {'device_id': 'DC004', 'avg_value': 68.33, 'min_value': 51, 'max_value': 93, 'date': '2021-12-04'}, {'device_id': 'DC004', 'avg_value': 78.08, 'min_value': 60, 'max_value': 106, 'date': '2021-12-03'}, {'device_id': 'DC004', 'avg_value': 71.96, 'min_value': 52, 'max_value': 96, 'date': '2021-12-02'}, {'device_id': 'DC004', 'avg_value': 68.33, 'min_value': 51, 'max_value': 93, 'date': '2021-12-04'}, {'device_id': 'DC004', 'avg_value': 78.08, 'min_value': 60, 'max_value': 106, 'date': '2021-12-03'}, {'device_id': 'DC004', 'avg_value': 71.96, 'min_value': 52, 'max_value': 96, 'date': '2021-12-02'}, {'device_id': 'DC004', 'avg_value': 68.33, 'min_value': 51, 'max_value': 93, 'date': '2021-12-04'}]
+
+{'device_id': 'DS003', 'anomaly_max': 1156, 'date': '2021-12-05'}
+
+{'device_id': 'DC002', 'anomaly_max': 96, 'date': '2021-12-02'}
+
+
+Process finished with exit code 0
