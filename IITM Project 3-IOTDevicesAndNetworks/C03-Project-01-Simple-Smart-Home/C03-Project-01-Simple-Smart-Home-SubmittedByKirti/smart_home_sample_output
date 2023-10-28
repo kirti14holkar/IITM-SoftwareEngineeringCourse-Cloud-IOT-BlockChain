@@ -1,0 +1,251 @@
+C:\Users\User\AppData\Local\Programs\Python\Python39\python.exe "C:\Users\User\IITM Projects_KIRTI\IITM Project 3-IOTDevicesAndNetworks\C03-Project-01-Simple-Smart-Home\C03-Project-01-Simple-Smart-Home-SubmittedByKirti\main.py" 
+
+Smart Home Simulation started.
+Intitate the device creation and registration process.
+
+Creating the Light devices for their respective rooms.
+light_1 is switched : OFF
+{'deviceid': 'light_1', 'device_type': 'LIGHT', 'room_type': 'Kitchen'} Registered on Edge.
+light_2 is switched : OFF
+{'deviceid': 'light_2', 'device_type': 'LIGHT', 'room_type': 'Kitchen'} Registered on Edge.
+light_3 is switched : OFF
+{'deviceid': 'light_3', 'device_type': 'LIGHT', 'room_type': 'BR1'} Registered on Edge.
+light_4 is switched : OFF
+{'deviceid': 'light_4', 'device_type': 'LIGHT', 'room_type': 'ChildrenRoom'} Registered on Edge.
+
+Creating the AC devices for their respective rooms. 
+ac_1 is switched : OFF
+{'deviceid': 'ac_1', 'device_type': 'AC', 'room_type': 'BR1'} Registered on Edge.
+ac_2 is switched : OFF
+{'deviceid': 'ac_2', 'device_type': 'AC', 'room_type': 'BR2'} Registered on Edge.
+ac_3 is switched : OFF
+{'deviceid': 'ac_3', 'device_type': 'AC', 'room_type': 'BR3'} Registered on Edge.
+
+
+Total Registered Devices : 
+{'deviceid': 'light_1', 'device_type': 'LIGHT', 'room_type': 'Kitchen'}
+{'deviceid': 'light_2', 'device_type': 'LIGHT', 'room_type': 'Kitchen'}
+{'deviceid': 'light_3', 'device_type': 'LIGHT', 'room_type': 'BR1'}
+{'deviceid': 'light_4', 'device_type': 'LIGHT', 'room_type': 'ChildrenRoom'}
+{'deviceid': 'ac_1', 'device_type': 'AC', 'room_type': 'BR1'}
+{'deviceid': 'ac_2', 'device_type': 'AC', 'room_type': 'BR2'}
+{'deviceid': 'ac_3', 'device_type': 'AC', 'room_type': 'BR3'}
+
+
+
+
+Command Number : 1 initiated from Edge Server.
+
+Command Number : 2 initiated from Edge Server.
+
+Command Number : 3 initiated from Edge Server.
+
+Command Number : 4 initiated from Edge Server.
+
+Command Number : 5 initiated from Edge Server.
+
+Command Number : 6 initiated from Edge Server.
+
+Command Number : 7 initiated from Edge Server.
+
+Command Number : 8 initiated from Edge Server.
+
+Command received on device and Executing Command : 1
+
+Command Number : 9 initiated from Edge Server.light_2 is switched : OFF
+
+
+Command Number : 10 initiated from Edge Server.
+
+Command Number : 11 initiated from Edge Server.
+
+Command Number : 12 initiated from Edge Server.
+
+Command Number : 13 initiated from Edge Server.
+
+Command Number : 14 initiated from Edge Server.
+
+Command Number : 15 initiated from Edge Server.
+Command received on device and Executing Command : 2
+light_3 is switched : OFF
+
+
+Command Number : 16 initiated from Edge Server.
+
+Command Number : 17 initiated from Edge Server.
+Command received on device and Executing Command : 3
+ac_1 is switched : OFF
+
+
+Command Number : 18 initiated from Edge Server.
+
+Command Number : 19 initiated from Edge Server.
+
+Command Number : 20 initiated from Edge Server.
+
+Command Number : 21 initiated from Edge Server.
+
+Command received on device and Executing Command : 4
+light_1 is switched : OFF
+
+Command Number : 22 initiated from Edge Server.
+
+Command Number : 23 initiated from Edge Server.
+
+Command Number : 24 initiated from Edge Server.
+
+Command Number : 25 initiated from Edge Server.
+
+Command Number : 26 initiated from Edge Server.
+
+Command Number : 27 initiated from Edge Server.
+
+Command Number : 28 initiated from Edge Server.
+
+Command received on device and Executing Command : 5
+light_2 is switched : OFF
+
+Command received on device and Executing Command : 6
+light_3 is switched : OFF
+
+Command received on device and Executing Command : 7
+light_4 is switched : OFF
+
+Command received on device and Executing Command : 8
+light_1 is switched : OFF
+
+Command received on device and Executing Command : 9
+light_2 is switched : OFF
+
+Command received on device and Executing Command : 10
+light_3 is switched : OFF
+
+Command received on device and Executing Command : 11
+light_4 is switched : OFF
+
+Command received on device and Executing Command : 12
+ac_1 is switched : OFF
+
+Command received on device and Executing Command : 13
+ac_2 is switched : OFF
+
+Command received on device and Executing Command : 14
+ac_3 is switched : OFF
+
+Command received on device and Executing Command : 15
+light_2 is switched : ON
+
+Command received on device and Executing Command : 16
+light_3 is switched : ON
+
+Command received on device and Executing Command : 17
+ac_1 is switched : ON
+
+Command received on device and Executing Command : 18
+light_1 is switched : ON
+
+Command received on device and Executing Command : 19
+light_2 is switched : ON
+
+Command received on device and Executing Command : 20
+light_3 is switched : ON
+
+Command received on device and Executing Command : 21
+light_4 is switched : ON
+
+Command received on device and Executing Command : 22
+light_1 is switched : ON
+
+Command received on device and Executing Command : 23
+light_2 is switched : ON
+
+Command received on device and Executing Command : 24
+light_3 is switched : ON
+
+Command received on device and Executing Command : 25
+light_4 is switched : ON
+
+Command received on device and Executing Command : 26
+ac_1 is switched : ON
+
+Command received on device and Executing Command : 27
+ac_2 is switched : ON
+
+Command received on device and Executing Command : 28
+ac_3 is switched : ON
+
+Command Number : 29 initiated from Edge Server.
+
+Command Number : 30 initiated from Edge Server.
+
+Command Number : 31 initiated from Edge Server.
+
+Command Number : 32 initiated from Edge Server.
+
+Command Number : 33 initiated from Edge Server.
+
+Command Number : 34 initiated from Edge Server.
+
+Command Number : 35 initiated from Edge Server.
+
+Command received on device and Executing Command : 29
+light_2 Light Intensity is set to : HIGH
+
+
+Command received on device and Executing Command : 30
+light_1 Light Intensity is set to : MEDIUM
+
+
+Command received on device and Executing Command : 31
+light_2 Light Intensity is set to : MEDIUM
+
+
+Command received on device and Executing Command : 32
+light_1 Light Intensity is set to : OFF
+
+
+Command received on device and Executing Command : 33
+light_2 Light Intensity is set to : OFF
+
+
+Command received on device and Executing Command : 34
+light_3 Light Intensity is set to : OFF
+
+
+Command received on device and Executing Command : 35
+light_4 Light Intensity is set to : OFF
+
+
+Command Number : 36 initiated from Edge Server.
+
+Command Number : 37 initiated from Edge Server.
+
+Command Number : 38 initiated from Edge Server.
+
+Command Number : 39 initiated from Edge Server.
+
+Command Number : 40 initiated from Edge Server.
+
+Command received on device and Executing Command : 36
+ac_1 Temperature is set to : 25
+
+
+Command received on device and Executing Command : 37
+ac_1 Temperature is set to : 26
+
+
+Command received on device and Executing Command : 38
+ac_1 Temperature is set to : 20
+
+
+Command received on device and Executing Command : 39
+ac_2 Temperature is set to : 20
+
+
+Command received on device and Executing Command : 40
+ac_3 Temperature is set to : 20
+
+
+Smart Home Simulation stopped.
+
+Process finished with exit code 0
