@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JupyterPersistentConnectionParameters">
+    <option name="moduleParameters">
+      <map>
+        <entry key="$PROJECT_DIR$/.idea/IITM Project 4-IOT CloudProcessingAndAnalytics.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="argv" value="-e endpoint -r Root_certificate -c Thing_Certificate -k Thing_private_key -t topic_name" />
+              <option name="managed" value="true" />
+              <option name="sdkName" value="Python 3.12 (pythonProject)" />
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
