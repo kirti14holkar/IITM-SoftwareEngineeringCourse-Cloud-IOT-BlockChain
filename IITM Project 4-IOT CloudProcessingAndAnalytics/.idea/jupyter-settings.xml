@@ -8,7 +8,7 @@
             <JupyterConnectionParameters>
               <option name="argv" value="-e endpoint -r Root_certificate -c Thing_Certificate -k Thing_private_key -t topic_name" />
               <option name="managed" value="true" />
-              <option name="sdkName" value="Python 3.12 (pythonProject)" />
+              <option name="sdkName" value="Python 3.12" />
             </JupyterConnectionParameters>
           </value>
         </entry>

@@ -1,0 +1,7 @@
+BSM_G101
+
+py BedSideMonitor_BSM_101.py -e  a3n6vc8rnvv3qq-ats.iot.us-east-1.amazonaws.com -r AmazonRootCA1.pem -c 606d707c940e7f320968f10ba8fe14abedc97729e632b5e61dca73cdedac24af-certificate.pem.crt -k 606d707c940e7f320968f10ba8fe14abedc97729e632b5e61dca73cdedac24af-private.pem.key -t iot/bsm
+
+BSM_G102
+
+py BedSideMonitor_BSM_102.py -e  a3n6vc8rnvv3qq-ats.iot.us-east-1.amazonaws.com -r AmazonRootCA1.pem -c eb7f21234b9621132458c8a5117853843c44a579cb604a0e6acf4dc140137aef-certificate.pem.crt -k eb7f21234b9621132458c8a5117853843c44a579cb604a0e6acf4dc140137aef-private.pem.key -t iot/bsm
