@@ -11,7 +11,7 @@ class AlertDataModel:
     # This is so that all unique facors for alert data are covered in partition and sort keys
     # Sort key: Minute level timestamp
     def __init__(self, config_file):
-        self._db = Database('bsm_alert_data', 'deviceid-ruleid', 'timestamp')
+        self._db = Database('bsm_alert_data', 'deviceid', 'timestamp')
 
         # Composing one model in another is not a great idea
         # Ideally there should be a service layer for such orchestration
