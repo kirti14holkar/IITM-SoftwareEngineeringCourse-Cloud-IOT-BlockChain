@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  m03p02Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: m03p02-source
+      VersioningConfiguration:
+        Status: Enabled

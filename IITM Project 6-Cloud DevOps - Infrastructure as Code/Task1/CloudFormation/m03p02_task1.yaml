@@ -1,0 +1,110 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    Description: EC2 instance type
+
+
+Resources:
+  # Create New Keypair
+  M03P02KeyPair: 
+    Type: AWS::EC2::KeyPair
+    Properties:
+      KeyName: IITMProject06
+
+  # EC2 Securty group to allow SSH on port 22.
+  M03P02SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Group with open Ingress and Egress
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+
+  ## EC2 IAM Role Creation with permission to Kinesis Stream and S3
+  M03P02IAMRole: 
+    Type: AWS::IAM::Role
+    Properties: 
+      AssumeRolePolicyDocument: 
+        Statement: 
+          - Effect: Allow
+            Principal: 
+              Service: 
+               - ec2.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Path: "/"
+      Policies: 
+        - PolicyName: S3_Kinesis_Permissions
+          PolicyDocument: 
+            Version: 2012-10-17
+            Statement: 
+              - Effect: Allow
+                Resource: '*'
+                Action: 
+                  - 's3:*'
+                  - 'kinesis:*'
+  
+  M03P02InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: m03p02-EC2-s3-kinesis
+      Roles:
+        - Ref: M03P02IAMRole
+
+  M03P02EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: ami-0f5ee92e2d63afc18
+      KeyName: !Ref M03P02KeyPair
+      IamInstanceProfile:
+        Ref: M03P02InstanceProfile
+      SecurityGroupIds:
+        - !Ref M03P02SecurityGroup
+      Tags:
+        - Key: Name
+          Value: M03P02-EC2
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo apt update
+          sudo apt install -y python3
+          sudo apt-get install python3-pip
+          pip install awscli
+          pip install boto3
+          pip install datetime
+
+  M03P02KinesisStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      Name: m03p02_raw_data_stream
+      ShardCount: 1
+
+  M03P02DynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: m03p02_anomaly_data
+      AttributeDefinitions:
+        - AttributeName: deviceid
+          AttributeType: S
+        - AttributeName: timestamp
+          AttributeType: S
+      KeySchema:
+        - AttributeName: deviceid
+          KeyType: HASH
+        - AttributeName: timestamp
+          KeyType: RANGE
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+  M03P02SNS:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: m03p02_anomaly_alert
+      Subscription:
+        - Endpoint: holkar.kirti1992@gmail.com
+          Protocol: email

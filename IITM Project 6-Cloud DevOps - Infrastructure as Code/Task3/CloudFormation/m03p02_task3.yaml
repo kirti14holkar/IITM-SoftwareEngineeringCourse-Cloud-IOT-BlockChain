@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: m03p02-task3-source
+    Description: m03p02-task3-source 
+
+Resources:
+  M03P02LambdaIAMRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: m03p02task3
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: /
+      Policies:
+      - PolicyName: DynamoKinesisSNSCWAccess
+        PolicyDocument:
+          Version: 2012-10-17
+          Statement:
+          - Effect: Allow
+            Resource: '*'
+            Action:
+            - 'kinesis:*'
+            - 'dynamodb:*'
+            - 'sns:*'
+            - 'logs:CreateLogGroup'
+            - 'logs:CreateLogStream'
+            - 'logs:PutLogEvents'
+            - 'logs:DescribeLogGroups'
+            - 'logs:DescribeLogStreams'
+            
+  
+  M03P02LambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties: 
+      FunctionName: M03P02Task3Lambda
+      Handler: anomaly_detection.lambda_handler
+      Runtime: python3.11
+      Role: !GetAtt M03P02LambdaIAMRole.Arn
+      Code:
+        S3Bucket: !Ref BucketName
+        S3Key: anomaly_detection.zip 
+      Timeout: 30
+
+      
+  M03P02EventSourceMapping:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      EventSourceArn: arn:aws:kinesis:ap-south-1:067657029978:stream/m03p02_raw_data_stream
+      FunctionName: !Ref M03P02LambdaFunction
+      StartingPosition: 'LATEST'

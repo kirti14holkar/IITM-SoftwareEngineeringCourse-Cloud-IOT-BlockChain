@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - M03P02Task3Lambda: 
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "M03P02Task3Lambda" 
+        Alias: "LambdaVersion"
+        CurrentVersion: 5
+        TargetVersion: 6

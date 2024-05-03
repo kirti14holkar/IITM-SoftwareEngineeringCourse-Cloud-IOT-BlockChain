@@ -1,0 +1,74 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "M03P02LambdaIAMRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName": "m03p02task3",
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "lambda.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                },
+                "Path": "/",
+                "Policies": [
+                    {
+                        "PolicyName": "DynamoKinesisSNSAccess",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Resource": "*",
+                                    "Action": [
+                                        "kinesis:*",
+                                        "dynamodb:*",
+                                        "sns:*"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "M03P02LambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+                "FunctionName": "M03P02Task3Lambda",
+                "Handler": "index.handler",
+                "Role": {
+                    "Fn::GetAtt": [
+                        "M03P02LambdaIAMRole",
+                        "Arn"
+                    ]
+                },
+                "Code": {
+                    "ZipFile": ""
+                },
+                "Runtime": "Python 3.11",
+                "Timeout": 30
+            }
+        },
+        "M03P02EventSourceMapping": {
+            "Type": "AWS::Lambda::EventSourceMapping",
+            "Properties": {
+                "EventSourceArn": "arn:aws:kinesis:us-east-1:677738098935:stream/m03p02_raw_data_stream",
+                "FunctionName": {
+                    "Ref": "M03P02LambdaFunction"
+                }
+            }
+        }
+    }
+}
